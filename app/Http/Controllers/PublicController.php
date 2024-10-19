@@ -5,14 +5,30 @@ namespace App\Http\Controllers;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use App\Mail\ContactAdminMail;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
-{function homepage() {
-    $title = 'Laravel 4 - es 25';
-    return view('welcome',['title'=> $title]);
-}
+// {function homepage() {
+//     $title = 'Laravel - es 27 - Pokemon Api';
+//     return view('welcome',['title'=> $title]);
+// }
+
+{
+public function homepage() {
+        $title = 'Laravel - es 27 - Pokemon Api';
+        $pokemons = Http::get('https://pokeapi.co/api/v2/pokemon/')->json()['results'];
+        // dd($pokemons);
+        return view('welcome', ['title' => $title, 'pokemons' => $pokemons]);
+    }
 //
+
+public function pokemonDetail($name){
+    // dd($name);
+    $pokemon = http::get('https://pokeapi.co/api/v2/pokemon/'.$name)->json();
+    dd($pokemon);
+}
+
 
 public function contactUs() {
     return view('contactUs');

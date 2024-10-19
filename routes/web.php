@@ -25,3 +25,6 @@ Route::get('/contattaci',[PublicController::class,'contactUs']) -> name('contact
 Route::post('/contattaci-sumbit',[PublicController::class,'contactUsSumbit']) -> name('contact.submit');
 
 Route::post('/contattaci-sumbit-Admin',[PublicController::class,'contactUsAdminSumbit']) -> name('contactAdmin.submit');
+
+//pokymans
+Route::get('pokemon/detail/{name}',[PublicController::class, 'pokemonDetail'])->name('pokemon.detail');
