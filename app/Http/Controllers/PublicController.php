@@ -26,7 +26,8 @@ public function homepage() {
 public function pokemonDetail($name){
     // dd($name);
     $pokemon = http::get('https://pokeapi.co/api/v2/pokemon/'.$name)->json();
-    dd($pokemon);
+    // dd($pokemon);
+    return view('detailpokemon', [ 'pokemon' => $pokemon]);
 }
 
 
