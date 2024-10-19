@@ -1,0 +1,9 @@
+PER I WINDOWS: SEGUIRE LA GUIDA PER EVITARE L'ERROR SSL
+
+
+
+Creare un nuovo progetto Laravel
+Utilizza la stessa API del docente
+recupera dati attaverso HTTPClient e blade
+gestisci dati attraverso il file api.php
+pushare su GitHub con nome laravel_05_nome_cognome
