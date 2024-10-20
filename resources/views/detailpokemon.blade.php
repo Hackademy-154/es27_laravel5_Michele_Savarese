@@ -18,14 +18,20 @@
         <div class="row justify-content-center">
             {{-- @dd($pokemon) --}}
 
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 text-center">
                 <img src="{{$pokemon['sprites']['front_default']}}" alt="">
                 <img src="{{$pokemon['sprites']['back_default']}}" alt="">
 
             </div>
             <div class="col-12 col-md-8 text-white">
                 <h3>Nome: {{$pokemon['name']}}</h3>
-
+                <h3>Tipo:</h3>
+                <ul>
+                    @foreach ($pokemon['types'] as $type)
+                    {{-- @dump($type['type']) --}}
+                    <li>{{$type['type']['name']}}
+                    @endforeach
+                </ul>
             </div>
 
         </div>
